@@ -31,6 +31,8 @@ import (
 type Options struct {
 	Verbose        bool
 	BackupFile     string
+	NoFQDN         bool
+	EnableNodeName bool
 	DestroyWorkers bool
 	RemoveBinaries bool
 }
@@ -77,5 +79,7 @@ func (i *Installer) createState(options *Options) *state.State {
 		BackupFile:     options.BackupFile,
 		DestroyWorkers: options.DestroyWorkers,
 		RemoveBinaries: options.RemoveBinaries,
+		NoFQDN:         options.NoFQDN,
+		EnableNodeName: options.EnableNodeName,
 	}
 }
